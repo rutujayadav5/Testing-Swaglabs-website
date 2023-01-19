@@ -42,19 +42,23 @@ User_name.send_keys("standard_user")
 #click password and send password
 Password.click()
 Password.send_keys("secret_sauce")
-
+driver.get_screenshot_as_file("loginpage.png")
 Submit.click()
 
 
 if(driver.find_element("xpath","//*[@id='header_container']/div[2]/span")):
-
+    driver.get_screenshot_as_file("loggedin.png")
     print("Log in successful!")
 
     
 
+Filter = driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select")
+Filter.click()
 
+Element_1=driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select/option[2]")
+Element_1.click()
 
-
+driver.get_screenshot_as_file("sorted.png")
 
 
 time.sleep(5)
