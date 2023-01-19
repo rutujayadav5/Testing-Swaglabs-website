@@ -42,24 +42,37 @@ User_name.send_keys("standard_user")
 #click password and send password
 Password.click()
 Password.send_keys("secret_sauce")
-driver.get_screenshot_as_file("loginpage.png")
+driver.get_screenshot_as_file("C:/Users/ryadav2/Desktop/Automation files/Screenshots/loginpage.png")
 Submit.click()
 
 
 if(driver.find_element("xpath","//*[@id='header_container']/div[2]/span")):
-    driver.get_screenshot_as_file("loggedin.png")
+    driver.get_screenshot_as_file("C:/Users/ryadav2/Desktop/Automation files/Screenshots/loggedin.png")
     print("Log in successful!")
 
     
 
 Filter = driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select")
-Filter.click()
 
+#Sorted by Z to A
+Filter.click()
 Element_1=driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select/option[2]")
 Element_1.click()
+driver.get_screenshot_as_file("C:/Users/ryadav2/Desktop/Automation files/Screenshots/sortedbyZtoA.png")
 
-driver.get_screenshot_as_file("sorted.png")
+Filter = driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select")
+#Sorted by low to high
+Filter.click()
+Element_2=driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select/option[3]")
+Element_2.click()
+driver.get_screenshot_as_file("C:/Users/ryadav2/Desktop/Automation files/Screenshots/sortedbylowtohigh.png")
 
+Filter = driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select")
+#Sorted by high to low
+Filter.click()
+Element_3=driver.find_element("xpath","//*[@id='header_container']/div[2]/div[2]/span/select/option[4]")
+Element_3.click()
+driver.get_screenshot_as_file("C:/Users/ryadav2/Desktop/Automation files/Screenshots/sortedbyhightolow.png")
 
 time.sleep(5)
 time.sleep(3)
